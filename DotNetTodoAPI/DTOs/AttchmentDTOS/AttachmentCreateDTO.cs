@@ -1,16 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DotNetTodoAPI.Model
+namespace DotNetTodoAPI.DTOs
 {
-    public class Attachment
+    public class AttachmentCreateDTO
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "FilePath is required")]
         [StringLength(255, ErrorMessage = "FilePath length cannot exceed 255 characters")]
         public string FilePath { get; set; }
-        public int TodoId { get; set; } 
-        public Todo? Todo { get; set; }  
+
+        [Required(ErrorMessage = "TodoId is required")]
+        public int TodoId { get; set; }
     }
 }

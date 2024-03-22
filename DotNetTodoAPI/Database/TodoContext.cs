@@ -8,7 +8,6 @@ namespace DotNetTodoAPI.Database
         public DbSet<Attachment> Attachments { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tasks> Tasks { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Todo> Todos { get; set; }
         public DbSet<TodoCategory> TodoCategories { get; set; }
 

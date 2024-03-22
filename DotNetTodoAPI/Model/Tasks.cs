@@ -14,5 +14,7 @@ namespace DotNetTodoAPI.Model
         [Required(ErrorMessage = "Priority is required")]
         [StringLength(50, ErrorMessage = "Priority length cannot exceed 50 characters")]
         public string Priority { get; set; }
+        public int TodoId { get; set; }
+        public Todo? Todo { get; set; }
     }
 }

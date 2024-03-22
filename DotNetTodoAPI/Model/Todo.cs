@@ -14,12 +14,8 @@ namespace DotNetTodoAPI.Model
 
         [StringLength(50, ErrorMessage = "TodoStatus length cannot exceed 50 characters")]
         public string TodoStatus { get; set; }
-
-        public int UserId { get; set; }
-        public User User { get; set; }
-
-        public ICollection<Tasks> Tasks { get; set; }
-        public ICollection<Attachment> Attachments { get; set; }
-        public ICollection<TodoCategory> TodoCategories { get; set; }
+        public ICollection<Tasks>? Tasks { get; set; }
+        public ICollection<Attachment>? Attachments { get; set; }
+        public ICollection<TodoCategory>? TodoCategories { get; set; }
     }
 }

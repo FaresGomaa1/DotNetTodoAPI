@@ -15,11 +15,10 @@ namespace DotNetTodoAPI.Repo
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
+        
         public IEnumerable<Todo> GetAll()
         {
-            return _context.Todos.Include(t => t.User)
-                                  .Include(t => t.Tasks)
+            return _context.Todos.Include(t => t.Tasks)
                                   .Include(t => t.Attachments)
                                   .Include(t => t.TodoCategories)
                                   .ToList();
@@ -27,8 +26,7 @@ namespace DotNetTodoAPI.Repo
 
         public Todo GetById(int id)
         {
-            return _context.Todos.Include(t => t.User)
-                                  .Include(t => t.Tasks)
+            return _context.Todos.Include(t => t.Tasks)
                                   .Include(t => t.Attachments)
                                   .Include(t => t.TodoCategories)
                                   .FirstOrDefault(t => t.TodoId == id);
@@ -55,7 +53,6 @@ namespace DotNetTodoAPI.Repo
 
             existingTodo.TodoTitle = todo.TodoTitle;
             existingTodo.TodoStatus = todo.TodoStatus;
-            existingTodo.UserId = todo.UserId;
             _context.SaveChanges();
         }
 
